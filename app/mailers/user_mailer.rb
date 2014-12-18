@@ -1,8 +1,8 @@
 class UserMailer < ActionMailer::Base
-  default from: 'notifications@example.com'
+  default from: 'http://localhost:3000'
   def registration_confirmation(user)
     @user = user
-    @url = "http://example.com/log_in"
+    @url = "http://localhost:3000/log_in"
     mail(to: @user.email, subject: "Welcome to my app")
   end
 

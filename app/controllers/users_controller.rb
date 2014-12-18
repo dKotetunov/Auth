@@ -35,6 +35,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.valid? && @user.save
+          UserMailer.deliver_registration_confirmation(@user)
   		    @user.create_profile
           redirect_to log_in_path, :notice => "Signed"
   	else

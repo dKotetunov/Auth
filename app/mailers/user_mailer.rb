@@ -1,11 +1,9 @@
 class UserMailer < ActionMailer::Base
 
   def registration_confirmation(user)
-    recipients  user.email
-    from        "app@demo.com"
-    subject     "Thank you for registration"
-    body         :user => user
-
+    @user = user
+    @url = "example@mail.com"
+    mail(to: @user.email,subject: "Welcome to my app")
   end
 
 end

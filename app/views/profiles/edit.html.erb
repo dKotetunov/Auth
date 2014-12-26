@@ -11,7 +11,7 @@
 </ul>
 </div>
 <% end %>
-	<%= form_for @profile, url: { action: "update" } do |f| %>
+	<%= form_for(@profile, remote: true, url: { action: "update" }) do |f| %>
 <p>
 	<%= f.label :first_name %><br>
 	<%= f.text_field :first_name %>

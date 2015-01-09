@@ -19,7 +19,6 @@ class ProfilesController < ApplicationController
 		@profile.update_attributes(params[:profile])
       respond_to do |format|
         if @profile.update_attributes(params[:profile])
-          format.html {redirect_to user_profile_path(@user), notice: "Profile changed"}
           format.js {}
         else
           format.html{render 'edit'}

@@ -1,6 +1,4 @@
 <%= render 'show_profile', profile: @profile %>
 <%= render 'modal' %>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Edit profile
-</button>
+<%= button_to "Edit profile", {}, remote: true, data: {toggle:'modal', target:'#myModal'}, class: "btn btn-primary" %>
 <%= link_to "Edit user", edit_user_path(current_user) %>

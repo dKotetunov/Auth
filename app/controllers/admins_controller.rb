@@ -10,7 +10,7 @@ class AdminsController < ApplicationController
 
   def edit
     @admin = Admin.find(params[:id])
-    @admin = current_user
+    @admin = current_admin
   end
 
   def update

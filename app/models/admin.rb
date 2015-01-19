@@ -1,4 +1,5 @@
 class Admin < ActiveRecord::Base
+  include Authorization
   attr_accessible :email, :password, :password_confirmation, :username
 
   attr_accessor :password

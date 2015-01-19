@@ -3,7 +3,6 @@ class AdminSessionsController < ApplicationController
   end
 
   def create
-    binding.pry
     admin = Admin.authenticate(params[:email], params[:password])
     if admin
       session[:admin_id] = admin.id

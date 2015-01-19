@@ -18,6 +18,7 @@ scope :admin do
   get 'admin', to: 'admins#new'
   resources :admins
   resource :profile, except: [:new, :create]
+  resources :admin_sessions
   end
 
 end

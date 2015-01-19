@@ -33,7 +33,7 @@ class AdminsController < ApplicationController
     @admin = Admin.new(params[:admin])
     if @admin.valid? && @admin.save
       @admin.create_profile
-      redirect_to log_in_path, :notice => "Signed"
+      redirect_to admin_log_in_path, :notice => "Signed"
     else
       render "new"
     end

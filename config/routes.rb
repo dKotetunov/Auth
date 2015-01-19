@@ -13,7 +13,7 @@ resources :users do
 resources :sessions
 
 scope :admin do
-  get 'admin_log_out', to: '_admin_sessions#destroy'
+  get 'admin_log_out', to: 'admin_sessions#destroy'
   get 'admin_log_in', to: 'admin_sessions#new'
   get 'admin', to: 'admins#new'
   resources :admins

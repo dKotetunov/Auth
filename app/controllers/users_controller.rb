@@ -18,12 +18,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        #flash[:succsess] = "Edit user"
-        #redirect_to user_profile_path(@user)
-      format.html {redirect_to edit_user_path, notice: "User info was changed"}
-      format.js{}
+        format.html {redirect_to edit_user_path, notice: "User info was changed"}
+        format.js{}
       else
-    #render 'edit'
         format.html{render action: "edit"}
       end
     end
@@ -37,11 +34,10 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.valid? && @user.save
-          #UserMailer.registration_confirmation(@user).deliver!
-  		    @user.create_profile
+   		    @user.create_profile
           redirect_to log_in_path, :notice => "Signed"
   	else
-  		render "new"
+  		    render "new"
   	end
 
     

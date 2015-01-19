@@ -8,7 +8,15 @@ root :to => "users#new"
 
 resources :users do
 	resource :profile, except: [:new, :create]
-end
+  end
+
 resources :sessions
+
+scope :admin do
+  get 'admin_log_out', to: 'sessions#destroy'
+  get 'admin_log_in', to: 'sessions#new'
+  get 'admin/sign_up', to: 'admins#new'
+  resources :admins
+  end
 
 end

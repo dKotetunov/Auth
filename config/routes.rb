@@ -17,8 +17,9 @@ scope :admin do
   get 'admin_log_in', to: 'admin_sessions#new'
   get 'admin', to: 'admins#new'
   resources :admins
-  resource :profile, except: [:new, :create]
   resources :admin_sessions
-  end
+end
+
+resource :profile, except: [:new, :create]
 
 end

@@ -1,8 +1,23 @@
 <h1>All users</h1>
 <table class="table table-striped">
-  <% @user.each do |user| %>
-      <li>
-        <%= link_to user.username, user %>
-      </li>
-  <% end %>
+    <thead>
+        <tr>
+            <td>Username</td>
+            <td>Email</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <% @users.each do |user| %>
+
+          <td><%= user.username %></td>
+          <td><%= user.email%></td>
+          <td><%= link_to 'Destroy', user,
+                          method: :delete,
+                          data: { confirm: 'Are you shure?' } %> </td>
+
+    </tr>
+      <% end %>
+    </tbody>
 </table>

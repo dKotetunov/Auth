@@ -6,7 +6,7 @@ class ProfilesAdminsController < ApplicationController
       format.html{}
       format.js{}
     end
-    @user = User.all
+    @users = User.all
   end
 
   def edit

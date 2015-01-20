@@ -17,7 +17,7 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     respond_to do |format|
       if @admin.update_attributes(params[:admin])
-        format.html {redirect_to edit_user_path, notice: "Admin info was changed"}
+        format.html {redirect_to edit_admin_path, notice: "Admin info was changed"}
         format.js{}
       else
         format.html{render action: "edit"}
@@ -32,7 +32,7 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.new(params[:admin])
     if @admin.valid? && @admin.save
-      @admin.create_profile
+      @admin.create_profile_admin
       redirect_to admin_log_in_path, :notice => "Signed"
     else
       render "new"

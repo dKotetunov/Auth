@@ -1,5 +1,5 @@
 class Admin < ActiveRecord::Base
-  include Authorization
+  include AuthorizationAdmin
   attr_accessible :email, :password, :password_confirmation, :username
 
   attr_accessor :password
@@ -10,7 +10,7 @@ class Admin < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
 
-  has_one :profile
+  has_one :profile_admin
 
 
 end

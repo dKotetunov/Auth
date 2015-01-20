@@ -20,7 +20,6 @@ class ProfilesController < ApplicationController
       respond_to do |format|
         if @profile.update_attributes(params[:profile])
           format.js {}
-
         else
           format.html{render 'edit'}
           end

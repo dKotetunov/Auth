@@ -16,10 +16,15 @@ scope :admin do
   get 'admin_log_out', to: 'admin_sessions#destroy'
   get 'admin_log_in', to: 'admin_sessions#new'
   get 'admin', to: 'admins#new'
-  resources :admins
-  resources :admin_sessions
-end
 
-resource :profile, except: [:new, :create]
+  resources :admins do
+    resource :profiles_admin, except: [:new, :create]
+  end
+  resources :admin_sessions
+  end
+
+
+
+
 
 end

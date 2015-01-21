@@ -12,13 +12,15 @@
 
 <div id="user_nav">
   <% if current_user %>
-    <div id="updateUser">
-      Logged in as <%= current_user.email %>.
-        </div>
-    <%= link_to "Log out", log_out_path %>
+    <div id="updateUser">Logged in as <%= current_user.email %>.</div>
+    <%= link_to "Log out for user", log_out_path %>
+  <% elsif current_admin %>
+      Logged in as <%= current_admin.email %><br>
+      <%= link_to "Log out for admin", admin_log_out_path %>
   <% else %>
-    <%= link_to "Sign up", sign_up_path %> or
-    <%= link_to "log in", log_in_path %>
+    <%= link_to "Sign up for user", sign_up_path %> or
+    <%= link_to "log in for user", log_in_path %> or
+    <%= link_to "log in for user", admin_log_in_path %>
   <% end %>
 </div>
 

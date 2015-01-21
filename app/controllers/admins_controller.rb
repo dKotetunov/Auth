@@ -17,8 +17,7 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     respond_to do |format|
       if @admin.update_attributes(params[:admin])
-        format.html {redirect_to edit_admin_path, notice: "Admin info was changed"}
-        format.js{}
+                format.js{}
       else
         format.html{render action: "edit"}
       end

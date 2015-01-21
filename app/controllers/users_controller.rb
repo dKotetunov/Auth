@@ -41,6 +41,10 @@ class UsersController < ApplicationController
   	end
   end
     def destroy
-
+      @user = User.find(params[:id])
+      @user.destroy
+        if @user.destroy
+          redirect_to admin_profiles_admin_path(current_admin), notice: "User was deleted"
+        end
     end
 end

@@ -1,23 +1,27 @@
-<h1> Edit admin profile </h1>
-<% if @profile_admin.errors.any? %>
+<h1> Edit admin </h1>
+<% if @admin.errors.any? %>
     <div class="errors_messages">
-      <h2> <%= pluralize(@profile_admin.errors.count, "error") %> prohibited
+      <h2> <%= pluralize(@profile.errors.count, "error") %> prohibited
         this article from being saved:
       </h2>
       <ul>
-        <% @profile_admin.errors.full_messages.each do |message| %>
+        <% @admin.errors.full_messages.each do |message| %>
             <li> <%= message %> </li>
         <% end %>
       </ul>
     </div>
 <% end %>
-<%= form_for(@profile_admin, remote: true, url: { action: "update" }) do |f| %>
+<%= form_for(@admin, remote: true, url: { action: "update" }) do |f| %>
     <p>
-      <%= f.label :first_name %><br>
-      <%= f.text_field :first_name %>
+      <%= f.label :username %><br>
+      <%= f.text_field :username %>
     </p>
     <p>
-      <%= f.label :last_name %><br>
-      <%= f.text_field :last_name %>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+
     </p>
 <% end %>

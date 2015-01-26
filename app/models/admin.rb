@@ -11,6 +11,7 @@ class Admin < ActiveRecord::Base
   validates_uniqueness_of :email
 
   has_one :profile_admin
+  has_one :role
 
 
 end

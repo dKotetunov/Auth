@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20150126160844) do
     t.string   "username"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.integer  "role_id"
   end
 
   create_table "profile_admins", :force => true do |t|

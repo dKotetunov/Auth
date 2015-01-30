@@ -8,9 +8,9 @@ class Ability
 
       elsif user.class.equal?(Admin)
         if user.role?('admin')
-
+          can :manage, [Admin, ProfileAdmin]
         elsif user.role?('super_admin')
-
+          can :manage, :all
         end
 
     end

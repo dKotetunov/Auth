@@ -13,5 +13,8 @@ class Admin < ActiveRecord::Base
   has_one :profile_admin
   has_one :role
 
+  def role?(role)
+     self.role.name == role
+  end
 
 end

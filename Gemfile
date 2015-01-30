@@ -11,6 +11,7 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
 gem "mail"
 gem "pry"
+gem "cancan"
 
 
 

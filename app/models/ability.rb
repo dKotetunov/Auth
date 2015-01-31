@@ -3,10 +3,12 @@ class Ability
 
   def initialize(user)
   user ||= User.new
-    if user.class.equal?(User)
+
+
+    if user.is_a?(User)
       can [:create, :update,:show], [User, Profile]
 
-      elsif user.class.equal?(Admin)
+      elsif user.is_a?(Admin)
         if user.role?('admin')
           can :manage, [Admin, Profile,ProfileAdmin]
         elsif user.role?('super_admin')

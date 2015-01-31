@@ -1,3 +1,4 @@
 <%= render 'show_admin_profile', admin: @admin %>
 <%= button_to "Edit admin", {}, remote: true, data: {toggle:'modal', target:'#modalAdmin'}, class: "btn btn-primary" %>
 <%= render 'user_list', user: @users %>
+<%= render "modal" %>

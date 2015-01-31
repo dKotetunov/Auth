@@ -22,9 +22,4 @@ scope :admin do
   end
   resources :admin_sessions
   end
-
-
-
-
-
 end

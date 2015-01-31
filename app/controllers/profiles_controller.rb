@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-	def show
+
+  def show
 		@user = User.find(params[:user_id])
 		@profile = @user.profile
       respond_to do |format|

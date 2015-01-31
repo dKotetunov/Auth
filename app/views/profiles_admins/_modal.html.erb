@@ -6,7 +6,7 @@
         <h4 class="modal-title" id="myModalLabel">Edit admin</h4>
       </div>
       <div class="modal-body">
-        <%= form_for @admin, remote: true, url: { action: "update" }, html: { multipart: :true } do |f| %>
+        <%= form_for @admin do |f| %>
             <p>
               <%= f.label :username %>
               <%= f.text_field :username %>

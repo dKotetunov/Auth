@@ -1,11 +1,12 @@
 class AdminsController < ApplicationController
-  def index
-    @user = User.all
-  end
+  load_and_authorize_resource
+
 
   def new
+    #binding.pry
     @admin = Admin.new
     @profile = Profile.new
+
   end
 
   def edit

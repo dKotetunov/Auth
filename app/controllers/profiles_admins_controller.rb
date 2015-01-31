@@ -1,4 +1,5 @@
 class ProfilesAdminsController < ApplicationController
+
   def show
     @admin = Admin.find(params[:admin_id])
     @profile_admin = @admin.profile_admin
